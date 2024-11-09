@@ -8,6 +8,7 @@ contract MoodNft is ERC721 {
     //erros
 
     error MoodNft__CantFlipMoodIfNotOwner();
+
     uint256 private s_tokenCounter;
     string private s_sadSvgImageUri;
     string private s_happySvgImageUri;
@@ -36,10 +37,10 @@ contract MoodNft is ERC721 {
             revert MoodNft__CantFlipMoodIfNotOwner();
         }
 
-        if (s_tokenIdToMood[tokenId]==Mood.HAPPY) {
-            s_tokenIdToMood[tokenId]=Mood.SAD;   
-        } else{
-            s_tokenIdToMood[tokenId]=Mood.HAPPY;
+        if (s_tokenIdToMood[tokenId] == Mood.HAPPY) {
+            s_tokenIdToMood[tokenId] = Mood.SAD;
+        } else {
+            s_tokenIdToMood[tokenId] = Mood.HAPPY;
         }
     }
 
@@ -48,27 +49,29 @@ contract MoodNft is ERC721 {
     }
 
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
-    string memory imageURI;
-    if (s_tokenIdToMood[tokenId] == Mood.HAPPY) {
-        imageURI = s_happySvgImageUri;
-    } else {
-        imageURI = s_sadSvgImageUri;
-    }
+        string memory imageURI;
+        if (s_tokenIdToMood[tokenId] == Mood.HAPPY) {
+            imageURI = s_happySvgImageUri;
+        } else {
+            imageURI = s_sadSvgImageUri;
+        }
 
-    string memory json = Base64.encode(
-        bytes(
-            string(
-                abi.encodePacked(
-                    '{"name": "', name(),
-                    '", "description": "An NFT that reflects the owner\'s mood!", ',
-                    '"attributes": [{"trait_type": "Moodiness", "value": 100}], ',
-                    '"image": "', imageURI, '"}'
+        string memory json = Base64.encode(
+            bytes(
+                string(
+                    abi.encodePacked(
+                        '{"name": "',
+                        name(),
+                        '", "description": "An NFT that reflects the owner\'s mood!", ',
+                        '"attributes": [{"trait_type": "Moodiness", "value": 100}], ',
+                        '"image": "',
+                        imageURI,
+                        '"}'
+                    )
                 )
             )
-        )
-    );
+        );
 
-    return string(abi.encodePacked("data:application/json;base64,", json));
+        return string(abi.encodePacked("data:application/json;base64,", json));
     }
-
 }

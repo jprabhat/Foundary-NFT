@@ -1,6 +1,28 @@
-## Foundry
+# NFT Project in Solidity
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Welcome to the NFT Project! This repository contains the Solidity code for creating, deploying, and managing non-fungible tokens (NFTs) on the Ethereum blockchain. Built with security and efficiency in mind, this project leverages the ERC-721 standard to create unique digital assets that can be securely stored, traded, and managed on the blockchain.
+
+## Key Features
+- **ERC-721 Compliant**: Ensures compatibility with existing NFT marketplaces and wallets.
+- **Metadata Management**: Configures token metadata to enhance user experience on platforms that support NFTs.
+- **Gas Optimization**: Designed with gas efficiency in mind to reduce transaction costs.
+
+## Project Structure
+- **Contracts**: Contains the core Solidity files defining the NFT smart contracts.
+- **Scripts**: Includes scripts for deploying and interacting with the contracts.
+- **Tests**: Comprehensive test suite to ensure contract functionality and security.
+
+## Getting Started
+
+### Prerequisites
+- **Solidity**: Recommended version (e.g., 0.8.x)
+
+
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/Foundary-NFT.git
+   cd Foundary-NFT
 
 Foundry consists of:
 
