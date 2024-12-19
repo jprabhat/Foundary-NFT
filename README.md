@@ -21,7 +21,7 @@ Welcome to the NFT Project! This repository contains the Solidity code for creat
 ### Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/Foundary-NFT.git
+   git clone https://github.com/jprabhat/Foundary-NFT.git
    cd Foundary-NFT
 
 Foundry consists of:
